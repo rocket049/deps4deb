@@ -1,2 +1,2 @@
 # Usage
-deps4deb <path to ELF program>
+	deps4deb <path to ELF program>

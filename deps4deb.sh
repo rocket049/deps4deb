@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-
-if [ -z "$1" ];then
-	echo "Usage:"
-	echo "        deps4deb <ELF file name>"
-	exit 1  
-fi
-
 echo '' > tmp1
 function getPkgName(){
 	if [ -f $1 ];then
@@ -30,7 +23,6 @@ for l in `cat tmp2`;do
 		res="${res}, $l"
 	fi
 done
-echo "Depends:"
-echo "        ${res}"
+echo ${res}
 
 rm tmp1 tmp2
