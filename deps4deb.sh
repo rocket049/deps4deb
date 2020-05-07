@@ -9,7 +9,8 @@ fi
 echo '' > tmp1
 function getPkgName(){
 	if [ -f $1 ];then
-		pkg1=`dpkg -S $1 | cut -f1 -d':'`
+		fn=$(readlink -f $1)
+		pkg1=`dpkg -S ${fn} | cut -f1 -d':'`
 		echo "$1: "${pkg1}
 		echo ${pkg1} >> tmp1
 	fi
